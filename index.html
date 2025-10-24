@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OceanUS</title>
-    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="icon" href="icon.png" type="image/png" />
     <style>
-      body {
+      /* Reset & base styling */
+      html, body {
         margin: 0;
         padding: 0;
-        background-color: #001833;
+        height: 100%;
+        width: 100%;
+        background-color: #001833; /* fallback color */
+      }
+
+      /* Background image behavior */
+      body {
         background-image: url('website.png');
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
+        background-size: cover;          /* fills the screen, crops as needed */
+        background-position: left center;/* keeps logo area visible on mobile */
+        background-repeat: no-repeat;
+        background-attachment: fixed;    /* smooth desktop scroll feel */
+      }
+
+      /* Mobile optimization */
+      @media (max-width: 768px) {
+        body {
+          background-position: 25% center; /* shifts slightly right to balance */
+          background-attachment: scroll;   /* prevents iOS Safari bugs */
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          background-position: 30% center; /* shifts logo into better view */
+          background-size: cover;          /* maintain full fill */
+        }
       }
     </style>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
-
