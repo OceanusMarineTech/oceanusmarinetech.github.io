@@ -12,16 +12,15 @@
         height: 100%;
         width: 100%;
         background-color: #001833;
-        animation: fadeIn 1.2s ease-in forwards;
       }
 
       body {
         background-image: url('website.png');
         background-size: cover;
-        background-position: left center;
+        background-position: 20% center; /* show more of left side by default */
         background-repeat: no-repeat;
         background-attachment: fixed;
-        opacity: 0;               /* start transparent */
+        opacity: 0;
         animation: fadeIn 1.2s ease-in forwards;
       }
 
@@ -30,25 +29,25 @@
         to { opacity: 1; }
       }
 
-      /* Tablet adjustments */
+      /* Laptop/tablet */
       @media (max-width: 1024px) {
         body {
-          background-position: 35% center;
+          background-position: 30% center;
         }
       }
 
-      /* Mobile phones */
+      /* Phones */
       @media (max-width: 768px) {
         body {
-          background-position: 45% center;
+          background-position: 40% center; /* pan farther left to expose logo */
           background-attachment: scroll;
         }
       }
 
-      /* Small phones (very narrow screens) */
+      /* Small phones */
       @media (max-width: 480px) {
         body {
-          background-position: 50% center;
+          background-position: 45% center;
         }
       }
     </style>
