@@ -6,36 +6,49 @@
     <title>OceanUS</title>
     <link rel="icon" href="icon.png" type="image/png" />
     <style>
-      /* Reset & base styling */
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
-        background-color: #001833; /* fallback color */
+        background-color: #001833;
+        animation: fadeIn 1.2s ease-in forwards;
       }
 
-      /* Background image behavior */
       body {
         background-image: url('website.png');
-        background-size: cover;          /* fills the screen, crops as needed */
-        background-position: left center;/* keeps logo area visible on mobile */
+        background-size: cover;
+        background-position: left center;
         background-repeat: no-repeat;
-        background-attachment: fixed;    /* smooth desktop scroll feel */
+        background-attachment: fixed;
+        opacity: 0;               /* start transparent */
+        animation: fadeIn 1.2s ease-in forwards;
       }
 
-      /* Mobile optimization */
-      @media (max-width: 768px) {
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      /* Tablet adjustments */
+      @media (max-width: 1024px) {
         body {
-          background-position: 25% center; /* shifts slightly right to balance */
-          background-attachment: scroll;   /* prevents iOS Safari bugs */
+          background-position: 35% center;
         }
       }
 
+      /* Mobile phones */
+      @media (max-width: 768px) {
+        body {
+          background-position: 45% center;
+          background-attachment: scroll;
+        }
+      }
+
+      /* Small phones (very narrow screens) */
       @media (max-width: 480px) {
         body {
-          background-position: 30% center; /* shifts logo into better view */
-          background-size: cover;          /* maintain full fill */
+          background-position: 50% center;
         }
       }
     </style>
